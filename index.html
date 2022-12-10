@@ -1,65 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
+
 <body>
-  <h1>Regex</h1>  
+  <h1>Regex</h1>
 
-     <script>
-
-//SPECIAL CHARACTERS NOT ALLOWED REGEXD(ONLY ALBHANUMERIC EX(DAVID5 OR david96))
-//     let hasSpeciaCharacter = e.target.value.split("").includes("-");
-//    if (e.target.value.match(/[!@#^&*()?%{}+=<>;:.,_|`\\$'"/\s/\[\]]/) ||hasSpeciaCharacter) return false;
-
-
-// THIS IS FOR  MINUS VALUE ONLY ALLOWED. AND TWO DIGITS ONLY ALLOWED AFTER DOT (EX: -0.55)
-// const regex = /^-?(\s*|\d+(\s*|(\.\d{0,2})))?$/
-//                       if(regex.test(e.target.value)){
-//                         setMinTemp(e.target.value)}
-//  
+  <script>
+    //SPECIAL CHARACTERS NOT ALLOWED REGEXD(ONLY ALBHANUMERIC EX(DAVID5 OR david96))
+    //     let hasSpeciaCharacter = e.target.value.split("").includes("-");
+    //    if (e.target.value.match(/[!@#^&*()?%{}+=<>;:.,_|`\\$'"/\s/\[\]]/) ||hasSpeciaCharacter) return false;
 
 
-// THIS IS FOR NUMBERS ONLY ALLOWED(DECIMAL) EX:(0O.87)
-// const regex = /^(\s*|\d+(\s*|(\.\d{0,2})))?$/
-//                       if(regex.test(e.target.value)){
-//                         setForward(e.target.value)}
-//                       } 
+    // THIS IS FOR  MINUS VALUE ONLY ALLOWED. AND TWO DIGITS ONLY ALLOWED AFTER DOT (EX: -0.55)
+    // const regex = /^-?(\s*|\d+(\s*|(\.\d{0,2})))?$/
+    //                       if(regex.test(e.target.value)){
+    //                         setMinTemp(e.target.value)}
+    //  
 
-// NOTE: VALUE.match(regex) or regex.test(value)
 
-// let hasSpeciaCharacter = e.target.value.split("").includes("-");
-//                     if (e.target.value.match(/[!@#^&*()?%{}+=<>;:.,_|`\\$'"/\s/\[\]]/) ||hasSpeciaCharacter) return false;
-//                     setOperatorCode(e.target.value)}
-//                   } 
+    // THIS IS FOR NUMBERS ONLY ALLOWED(DECIMAL) EX:(0O.87)
+    // const regex = /^(\s*|\d+(\s*|(\.\d{0,2})))?$/
+    //                       if(regex.test(e.target.value)){
+    //                         setForward(e.target.value)}
+    //                       } 
 
-// useImperativeHandle(ref, () => {
-//         return {
-//             getValue: () => {
-//                 let dateString = null;
-//                 if (selectedDate) {
-//                     dateString = format(selectedDate, 'dd/MM/yyyy');
-//                 }
-//                 return dateString;
-//             },
-//             isCancelAfterEnd: () => {
-//                 return !selectedDate;
-//             },
-//             afterGuiAttached: () => {
-//                 if (!props.value) {
-//                     return;
-//                 }
-//                 const [_, day, month, year] = props.value.match(/(\d{2})\/(\d{2})\/(\d{4})/);
-//                 let selectedDate = new Date(year, month - 1, day);
-//                 setSelectedDate(selectedDate);
-//             }
-//         };
-//     });
+    // NOTE: VALUE.match(regex) or regex.test(value)
+    //NOTE: VALUE IS RETURN THE VALUE;
+    //NOTE: TEST IS RETURN THE BOOLEANM[]
 
-      </script>
+    // let hasSpeciaCharacter = e.target.value.split("").includes("-");
+    //                     if (e.target.value.match(/[!@#^&*()?%{}+=<>;:.,_|`\\$'"/\s/\[\]]/) ||hasSpeciaCharacter) return false;
+    //                     setOperatorCode(e.target.value)}
+    //                   } 
+
+    // useImperativeHandle(ref, () => {
+    //         return {
+    //             getValue: () => {
+    //                 let dateString = null;
+    //                 if (selectedDate) {
+    //                     dateString = format(selectedDate, 'dd/MM/yyyy');
+    //                 }
+    //                 return dateString;
+    //             },
+    //             isCancelAfterEnd: () => {
+    //                 return !selectedDate;
+    //             },
+    //             afterGuiAttached: () => {
+    //                 if (!props.value) {
+    //                     return;
+    //                 }
+    //                 const [_, day, month, year] = props.value.match(/(\d{2})\/(\d{2})\/(\d{4})/);
+    //                 let selectedDate = new Date(year, month - 1, day);
+    //                 setSelectedDate(selectedDate);
+    //             }
+    //         };
+    //     });
+
+
+    //THIS IS FOR ONLY GET NUMBERS(EX:"DAVID 5.55") ANS: 5.55
+    // let x = "DAVID 5.55";
+    // let regex = x.match(/[0-9\.]/g);
+    // console.log(regex,"regex")
+  </script>
 
 </body>
+
 </html>
