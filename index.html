@@ -67,6 +67,71 @@
     // let x = "DAVID 5.55";
     // let regex = x.match(/[0-9\.]/g);
     // console.log(regex,"regex")
+
+    //     //START//THIS IS FOR IMPORT EXCEL
+
+    //     import * as XLSX from "xlsx";
+
+
+    // <input type="file" className="upload"  onChange={(e) => { importRecord(e)}} /> // should be input type file
+
+    // const importRecord=(e)=>{
+    // 		let file = File;
+    // 		let files = e.target.files;
+    // 		var extension = files[0].name.substring(files[0].name.lastIndexOf("."), files[0].name.length);
+    // 		if (extension.toLowerCase() === ".xls" || extension.toLowerCase() === ".xlsx" || extension.toLowerCase() === ".csv") {
+    // 		  file = e.target.files[0];
+    // 		  if (typeof (document.getElementById("filename")) != 'undefined' && document.getElementById("filename") != null) {
+    // 			document.getElementById("filename").value = file.name;
+    // 		  }
+    // 		  let readFile = new FileReader();
+    // 		  readFile.readAsArrayBuffer(file); // It  is used to start reading the contents of a specified  File
+    // 		  readFile.onload = () => {
+    // 			let storeData = readFile.result;
+    //             var data =fileUpload(storeData,"cargolist" );
+
+    // 		}
+    // 		}
+    //     }
+    // 	function fileUpload(storeData,sheetName) {
+
+    // 		try {
+    // 		  let workbook;
+    // 		  /* start------->convert data to binary string  */
+    // 		  let data = new Uint8Array(storeData);  
+    // 		  let arr = [];
+    // 		  for (let i = 0; i !== data.length; ++i) {
+    // 			arr[i] = String.fromCharCode(data[i]);
+    // 		  }
+    // 		  let bstr = arr.join('');
+    // 		  workbook = XLSX.read(bstr, {            //note: confusing place--> XlSX instead of importing file has XLS format. it must be XLSX format
+    // 			type: 'binary'
+    // 		  });
+    // 		  /* end------->convert data to binary string  */
+    // 		  let wbook = workbook;
+    // 		  let first_sheet_name = wbook.SheetNames[0]; //first_sheet_name--> file name of importing file
+
+    // 		  if (sheetName !== first_sheet_name) {
+    // 			let worksheet = wbook.Sheets[first_sheet_name];
+
+    // 			var ExcelHeaders = XLSX.utils.sheet_to_json(worksheet, {
+    // 			  header: 0
+    // 			});
+    // 			return ExcelHeaders; //ExcelHeaders --> it give array of object
+    // 		}
+    // 	  } catch (e) {
+    // 		  if (e instanceof Error) {
+    // 			console.log("The exception in fileUpload Method" + e.message);
+    // 			console.log(e.stack);
+    // 		  }
+
+    // 		  return false;
+    // 		}
+
+    // 	}
+
+
+    //END
   </script>
 
 </body>
