@@ -171,6 +171,187 @@
     // };
 
     //END//RGB TO HEX
+
+    //START//INBOUND AND OUTBOUND REDUX PERSIST
+    // import _ from '@lodash';
+    // import { createTransform } from 'redux-persist';
+
+    //  const NEW_SONATA_MAP_TYPE = 'MAP'
+    //  const NEW_SONATA_ARRAY_TYPE = 'ARRAY'
+    //  const NEW_SONATA_SET_TYPE = 'SET'
+    //  const NEW_SONATA_PERSIST_TYPE = 'NeWsOnAtApErSiStTyPe'
+
+    // const transform = createTransform(
+    //   // transform state on its way to being serialized and persisted.
+    //   (inboundState, key) => {
+    //     // convert mySet to an Array.
+    //      return transformToArray(inboundState)
+    //   },
+    //   // transform state being rehydrated
+    //   (outboundState, key) => {
+    //     // convert mySet back to a Set.
+    //     return  transformFromArray(outboundState)
+    //   },
+    //   // define which reducers this transform gets called for.
+    //   { whitelist: ['TankCondition'] }
+    // );
+
+
+    // export const transformToArray = (dataToTransform) => {
+    //   if(dataToTransform instanceof Map){
+    //     const transformedData = new Map()
+    //     dataToTransform.forEach((k, v) => {
+    //       if(k instanceof Map || k instanceof Array || k instanceof Set || k instanceof Object){
+    //         transformedData.set(v, transformToArray(k))
+    //       }else {
+    //         transformedData.set(v, k);
+    //       }
+    //     })
+    //     transformedData.set(NEW_SONATA_PERSIST_TYPE, NEW_SONATA_MAP_TYPE)
+    //     return Array.from(transformedData)
+    //   }else if(dataToTransform instanceof Array){
+    //     const transformedData = []
+    //     dataToTransform.forEach((value) => {
+    //       if(value instanceof Map || value instanceof Array || value instanceof Set || value instanceof Object){
+    //         transformedData.push(transformToArray(value))
+    //       }else{
+    //         transformedData.push(value)
+    //       }
+    //     })
+    //     transformedData.push([NEW_SONATA_PERSIST_TYPE, NEW_SONATA_ARRAY_TYPE])
+    //     return transformedData
+    //   }else if(dataToTransform instanceof Set){
+    //     const transformedData = new Set()
+    //     dataToTransform.forEach((value) => {
+    //       if(value instanceof Map || value instanceof Array || value instanceof Set || value instanceof Object){
+    //         transformedData.add(transformToArray(value))
+    //       }else{
+    //         transformedData.add(value)
+    //       }
+    //     })
+    //     transformedData.add([NEW_SONATA_PERSIST_TYPE, NEW_SONATA_SET_TYPE])
+    //     return Array.from(transformedData)
+    //   }else if(dataToTransform instanceof Object){
+    //     const transformedData = {}
+    //     for(const[v, k] of Object.entries(dataToTransform)) {
+    //       if(k instanceof Map || k instanceof Array || k instanceof Set || k instanceof Object){
+    //         transformedData[v] = transformToArray(k)
+    //       }else {
+    //         transformedData[v] = k;
+    //       }
+    //     }
+    //     return transformedData
+    //   }
+    // }
+
+    // export const transformFromArray = (arrayData, key = 'ss') => {
+    //   const typeData = arrayData instanceof Array ? arrayData[arrayData.length - 1] : []
+    //   const type = typeData && typeData.length > 0 && typeData[0] === NEW_SONATA_PERSIST_TYPE ? typeData[1] : ''
+    //   if(arrayData instanceof Array){
+    //     arrayData.pop()
+    //   }
+    //   if(type === NEW_SONATA_MAP_TYPE){
+    //     const transformedData = new Map()
+    //     arrayData.forEach((v) => {
+    //       if(v[1] instanceof Array || v[1] instanceof Object){
+    //         transformedData.set(v[0], transformFromArray(v[1]))
+    //       }else {
+    //         transformedData.set(v[0], v[1]);
+    //       }
+    //     })
+    //     return transformedData
+    //   }else if(type === NEW_SONATA_ARRAY_TYPE){
+    //     const transformedData = []
+    //     arrayData.forEach((value) => {
+    //       if(value instanceof Array || value instanceof Object){
+    //         transformedData.push(transformToArray(value))
+    //       }else{
+    //         transformedData.push(value)
+    //       }
+    //     })
+    //     return transformedData
+    //   }else if(type === NEW_SONATA_SET_TYPE){
+    //     const transformedData = new Set()
+    //     arrayData.forEach((value) => {
+    //       if(value instanceof Array || value instanceof Object){
+    //         transformedData.add(transformToArray(value))
+    //       }else{
+    //         transformedData.add(value)
+    //       }
+    //     })
+    //     return transformedData
+    //   }else if(arrayData instanceof Object){
+    //     const transformedData = {}
+    //     for(const [v, k] of Object.entries(arrayData)){
+    //       if(k instanceof Array || k instanceof Object){
+    //         transformedData[v] = transformFromArray(k)
+    //       }else{
+    //         transformedData[v] = k
+    //       }
+    //     }
+    //     return transformedData
+    //   }
+    //   return arrayData
+    // }
+
+
+    // export default transform
+
+    //END // INBOUND AND OUTBOUND REDUX PERSIST
+
+
+    // THIS IS NEW WITH SPRAD OPERATOR 
+    // const planPatternTransform = createTransform(
+    //   // transform state on its way to being serialized and persisted.
+    //   (inboundState, key) => {
+    //     // convert mySet to an Array.
+    //     // console.log("inboundState", inboundState)
+
+    //     const obj = {...inboundState,
+    //         Hot_Works_Ban_Stacks: transformToArray(inboundState.Hot_Works_Ban_Stacks),
+    //         DG_Pref_Stacks: transformToArray(inboundState.DG_Pref_Stacks),
+    //         Rfr_Pref_Stacks: transformToArray(inboundState.Rfr_Pref_Stacks),
+    //         Rfr_Ban_Stacks: transformToArray(inboundState.Rfr_Ban_Stacks), 
+    //         Empty_Pref_Stacks: transformToArray(inboundState.Empty_Pref_Stacks), 
+    //         Hm20_Strict_Stacks: transformToArray(inboundState.Hm20_Strict_Stacks), 
+    //         Hm40_Strict_Stacks: transformToArray(inboundState.Hm40_Strict_Stacks), 
+    //         _Pod_Preference: transformToArray(inboundState._Pod_Preference), 
+    //         _Pod_Slot_Preference: transformToArray(inboundState._Pod_Slot_Preference), 
+    //         _IMO1_Stacks: transformToArray(inboundState._IMO1_Stacks), 
+    //         _Pol_Preference: transformToArray(inboundState._Pol_Preference), 
+    //         Slot_Ban_Slots: transformToArray(inboundState.Slot_Ban_Slots), 
+    //         DG_Ban_Slots: transformToArray(inboundState.DG_Ban_Slots),
+    //         remarks: transformToArray(inboundState.remarks)
+    //     }
+    //     return obj
+    //   },
+    //   // transform state being rehydrated
+    //   (outboundState, key) => {
+    //     // convert mySet back to a Set.
+    //     // console.log("outbound state", outboundState)
+    //     const obj =  {...outboundState,
+    //         Hot_Works_Ban_Stacks: transformFromArray(outboundState.Hot_Works_Ban_Stacks),
+    //         DG_Pref_Stacks: transformFromArray(outboundState.DG_Pref_Stacks),
+    //         Rfr_Pref_Stacks: transformFromArray(outboundState.Rfr_Pref_Stacks),
+    //         Rfr_Ban_Stacks: transformFromArray(outboundState.Rfr_Ban_Stacks), 
+    //         Empty_Pref_Stacks: transformFromArray(outboundState.Empty_Pref_Stacks), 
+    //         Hm20_Strict_Stacks: transformFromArray(outboundState.Hm20_Strict_Stacks), 
+    //         Hm40_Strict_Stacks: transformFromArray(outboundState.Hm40_Strict_Stacks), 
+    //         _Pod_Preference: transformFromArray(outboundState._Pod_Preference), 
+    //         _Pod_Slot_Preference: transformFromArray(outboundState._Pod_Slot_Preference), 
+    //         _IMO1_Stacks: transformFromArray(outboundState._IMO1_Stacks), 
+    //         _Pol_Preference: transformFromArray(outboundState._Pol_Preference), 
+    //         Slot_Ban_Slots: transformFromArray(outboundState.Slot_Ban_Slots), 
+    //         DG_Ban_Slots: transformFromArray(outboundState.DG_Ban_Slots),
+    //         remarks: transformFromArray(outboundState.remarks, 'remarks')
+    //     }
+    //     return obj
+    //   },
+    //   // define which reducers this transform gets called for.
+    //   { whitelist: ['planPattern'] }
+    );
+
+    // END NEW WIEH SPREAD OPERATOR
   </script>
 
 </body>
