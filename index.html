@@ -349,9 +349,103 @@
     //   },
     //   // define which reducers this transform gets called for.
     //   { whitelist: ['planPattern'] }
-    );
+    // );
 
-    // END NEW WIEH SPREAD OPERATOR
+    // END NEW WIEH SPREAD OPERATOR//
+
+    //START//THIS IS FOR IMPORT EXCEL AND EDI FILE AND TANKNAEM REGEX(FOR VALIDATION)
+
+    // //EDI FILE READER BASIC CONCEPT;
+    // WE GET THE FILE(WEHN WE CLICK THE BUTTON,INPUT TYPE SHOULD BE file;
+    // const files = event.target.files;
+    // let extension = files[0].name?.substring(files[0]?.name?.lastIndexOf('.'), files[0]?.name?.length);
+
+    // //YOU CAN TRY files[0].name.split(".")[2];
+    // let end = '.edi';
+    // if (extension.toLowerCase() === end) {
+    // 	let file = event.target.files[0];
+    // 	let reader = new FileReader();
+    // 	reader.onload = () => {
+    // 	let csvData = reader.result;
+    //         //csvData is excepted data
+    //         // ALL CODE HERE
+    //         reader.readAsText(file);
+    // 	event.target.value = "";
+    //           }
+    // }
+
+
+    // //EXCEL FILE READER BASIC CONCEPT;
+    //  WE GET THE FILE(WEHN WE CLICK THE BUTTON,INPUT TYPE SHOULD BE file;
+    // const files = event.target.files;
+    // let extension = files[0].name?.substring(files[0]?.name?.lastIndexOf('.'), files[0]?.name?.length);
+    // //YOU CAN TRY files[0].name.split(".")[2];
+    // let end = '.xlsx';
+    // if (extension.toLowerCase() === end) {
+    // 	let file = event.target.files[0];
+    // 	let reader = new FileReader();
+    // 	reader.onload = () => {
+    // 	let csvData = reader.result;
+    //       //csvData is excepted data
+    //         //ALL CODE HERE 
+    //        readFile.readAsArrayBuffer(file);
+    // 	event.target.value = "";
+    //           }
+    // }
+
+
+    // 	<button
+    // 	onChange={this.state.selectedFile == 'Excel' ? this.importAction : this.tanstaImport}
+    // 	id="toolimport"
+    // 	className="tank_image_size"
+    // 	>
+    // 	<img
+    // 	src="assets/images/Mastertoolbar-icons/Import.svg"
+    // 	alt="Import"
+    // 	className="tank_image_size"
+    // 	/>
+    // 	<input
+    // 	type="file"
+    // 	className="upload"
+    // 	title="File upload"
+    // 	ref={ref => (this.fileInput = ref)}/>
+    // 	</button>
+
+    // //BASCIC THING
+    // step 1: we get the files(event.target.files);
+    // step2: we find the extenstion(excel or edi or any)
+    // step3:we use inbuild method(let reader = new FileReader()) the reason is first we have to read the file;
+    // step4:then we have to call that file.(ex: reader.readAsText() or reader.readAsArrayBuffer());
+    // step5: we have to pass the file;(how to get)
+    // step6: ex:reader.readAsText(file); or  readFile.readAsArrayBuffer(file);
+    // step7: we have to write all functionalites in reader.onload method;(ex:reader.onload = () => {//all code }
+    // step8: we need the ReadFile data. (how to get??)
+    // step9: already we wrote the inbuild method(let reader = new FileReader()) .we can use directly.the method return result;
+    // step10:ex:let csvData = reader.result; within reader.onload method;
+    // step11: event.target.value = "", the reason is, again when we import the same file at that time import, without event.target.value = ""; the function not call;
+
+
+    //  //WHAT IS THE DIFFERENCE BETWEEN readAsText(file) VS readAsArrayBuffer(file);
+
+    // readAsArrayBuffer(file); FOR EXCEL SHEET;
+    // readAsText(file) FOR EDI FILE, THIS IS STRING FORMAT
+
+
+    // //THIS IS FOR TANK DETAILS SCREEN
+    // //ONLY ALLOWED ALPHANUMERIC AND .,SPACE
+    // // first = (\w+)
+    // // second = ((\.\s)?(,\s)?|(\.|,|\s{0,1}))
+
+    // // s3 = (\.\s)?
+    // //s4 = (,\s)?
+    // //s5 = (\.|,|\s{0,1})
+
+    // //third = ^((\w+)((\.\s)*(,\s)*|(\.|,|\s{0,1}))){0,}$
+    // const regex = /^((\w+)((\.\s)?(,\s)?|(\.|,|\s)?))*$/;
+
+
+
+    //END
   </script>
 
 </body>
